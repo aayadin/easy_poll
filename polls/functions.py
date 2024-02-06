@@ -59,7 +59,7 @@ def parse_question_result(question_stats: list[tuple]) -> list[dict]:
             'text': question[0],
             'rank': question[1],
             'total': question[2],
-            'percent': (question[3] if question[3] else '-')
+            'percent': (format(float(question[3]), '.2f') if question[3] else '-')
         })
     return parsed_question_stats
 
@@ -77,7 +77,7 @@ def parse_answer_result(answer_stats: list[list[tuple]]) \
             option_stats.append({
                 'text': answer[1],
                 'total': answer[2],
-                'percent': (answer[3] if answer[3] else '-')
+                'percent': (format(float(answer[3]), '.2f') if answer[3] else '-')
             })
         parsed_answer_stats.append(question_stats)
     return parsed_answer_stats
