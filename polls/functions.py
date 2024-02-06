@@ -104,15 +104,14 @@ def calculate_result(poll_id: int) -> dict:
                    DENSE_RANK() OVER (ORDER BY COUNT(DISTINCT a.user_id) DESC) AS question_rank,
                    COUNT(DISTINCT a.user_id) AS user_count,
                    COUNT(DISTINCT a.user_id) * 100.0 / NULLIF(
-                       (SELECT COUNT(DISTINCT user_id)
-                       FROM polls_answer WHERE poll_id = %s AND question_id = q.id), 0
+                       (SELECT COUNT(DISTINCT user_id) FROM polls_answer WHERE poll_id = %s AND question_id = %s), 0
                    ) AS user_percentage
             FROM polls_question q
             LEFT JOIN polls_answer a ON a.question_id = q.id AND a.poll_id = %s
             WHERE q.poll_id = %s
             GROUP BY q.id, q.text
             ORDER BY q.id;
-        ''', [poll_id, poll_id, poll_id])
+        ''', [poll_id, poll_id, poll_id, poll_id])
         question_stats = cursor.fetchall()
 
     # Получаем список вопросов, относящихся к опросу
