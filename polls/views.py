@@ -20,7 +20,7 @@ def poll(request, id, option=None):
         try:
             save_answer(user, int(option))
         except ValidationError:
-            return redirect('index', request)
+            return redirect('polls:index')
     except MultiValueDictKeyError:
         pass
     question = get_next_question(user, id, option)
