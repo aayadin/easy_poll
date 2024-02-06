@@ -48,9 +48,12 @@ python manage.py runserver
 <image src="https://github.com/aayadin/easy_poll/blob/main/static/screenshots/index.png">
 
 Опрос:
+<image src="https://github.com/aayadin/easy_poll/blob/main/static/screenshots/poll_in_progress.png">
 
 Статистика по вопросам:
+<image src="https://github.com/aayadin/easy_poll/blob/main/static/screenshots/question_results.png">
 
 Статистика по ответам:
+<image src="https://github.com/aayadin/easy_poll/blob/main/static/screenshots/answer_results.png">
 
 Выполнил Андрей Ядин.
