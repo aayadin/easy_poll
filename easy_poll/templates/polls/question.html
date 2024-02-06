@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+  {{ question }}
+  <form action="{% url 'polls:poll' poll.id %}">
+  {% for option in options %}
+    {% include 'includes/option.html' %}
+  {% endfor %}
+  <button type="submit">Ответить</button>
+  </form>
+</ul>
+{% endblock %}

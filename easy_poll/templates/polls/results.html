@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul style="padding: 0">
+    <h1>Результаты опроса</h1><br>
+    <h2>Общее количество опрошенных: {{ total_users }}</h2>
+    <h2>Статистика по вопросам:</h2>
+    {% for question in question_stats %}
+      {% include 'includes/question_result.html' %}
+    {% endfor %}
+    <h2>Статистика по ответам:</h2>
+    {% for question in answer_stats %}
+      {% include 'includes/option_result.html' %}
+    {% endfor %}
+</ul>
+{% endblock %}

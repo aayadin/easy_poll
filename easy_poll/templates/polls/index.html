@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Последние опросы</h1>
+{% for poll in polls %}
+    {% include 'includes/poll.html' %}
+{% endfor %}
+{% endblock %}

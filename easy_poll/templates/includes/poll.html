@@ -1,0 +1,8 @@
+<ul>
+  <li>
+    {{ poll.title }}
+  </li>
+</ul>
+<p>Дата публикации: {{ poll.pub_date|date:"d E Y" }}</p>
+<a class="btn btn-primary" href="{% url 'polls:poll' poll.id %}">Пройти</a>
+<hr>

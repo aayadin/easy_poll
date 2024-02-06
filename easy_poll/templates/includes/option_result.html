@@ -1,0 +1,13 @@
+{% for key, value in question.items %}
+  <h4>{{ key }}</h4><br>
+    <ul>
+      {% for option in value %}
+        <li style="margin-bottom: 40px">
+          <p>Вариант ответа: {{ option.text }}</p>
+          <p>Количество ответивших: {{ option.total }}</p>
+          <p>Доля ответивших от общего количества участников опроса: {{ option.percent }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  <hr>
+{% endfor %}
