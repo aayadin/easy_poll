@@ -45,7 +45,7 @@ python manage.py runserver
 
 ### Скрины ###
 Главная:
-
+[https://github.com/aayadin/easy_poll/blob/main/static/screenshots/index.png]
 Опрос:
 
 Статистика по вопросам:
