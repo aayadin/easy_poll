@@ -3,9 +3,9 @@
 {% block content %}
 <ul>
   {{ question }}
-  <form action="{% url 'polls:poll' poll.id %}">
+  <form action="{% url 'polls:poll' poll.id %}"><br>
   {% for option in options %}
-    {% include 'includes/option.html' %}
+    {% include 'includes/option.html' %}<br>
   {% endfor %}
   <button type="submit">Ответить</button>
   </form>
